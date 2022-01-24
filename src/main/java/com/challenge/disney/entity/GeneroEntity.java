@@ -1,9 +1,12 @@
 package com.challenge.disney.entity;
 
 import javax.persistence.*;
-import lombok.NonNull;
+import lombok.*;
 
+@Getter
+@Setter
 
+@Entity
 public class GeneroEntity {
     
     @Id

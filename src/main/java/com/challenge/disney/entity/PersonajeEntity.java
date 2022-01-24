@@ -1,9 +1,16 @@
 package com.challenge.disney.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
-import lombok.NonNull;
+import lombok.*;
 
+@Getter
+@Setter
+
+@Entity
 public class PersonajeEntity {
     
     @Id
@@ -20,4 +27,7 @@ public class PersonajeEntity {
     private Long peso;
     
     private String historia;
+
+    @ManyToMany(mappedBy = "personajes", cascade = CascadeType.ALL)
+    private List<PeliculaEntity> peliculas = new ArrayList<>();
 }
